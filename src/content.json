@@ -1,0 +1,173 @@
+{
+  "site": {
+    "title": "Jesper Stoor — Portfolio",
+    "description": "Jesper Stoor — visuaalisen suunnittelijan kuvitteellinen portfolio ja CV."
+  },
+  "identity": {
+    "name": "Jesper Stoor",
+    "monogram": "JS",
+    "email": "jesper.stoor@hotmail.com",
+    "location": "Espoo, Suomi",
+    "coordinates": ""
+  },
+  "navigation": {
+    "label": "Päänavigaatio",
+    "profile": "Profiili",
+    "gallery": "Galleria",
+    "contact": "Ota yhteyttä",
+    "contactLink": "Jutellaan projektista",
+    "emailLink": "Sähköposti",
+    "galleryLink": "Galleria ↗"
+  },
+  "hero": {
+    "eyebrow": "KUVITTEELLINEN PROFIILI · KÄYTETTÄVISSÄ PROJEKTEIHIN",
+    "titleFirst": "Luon visuaalisia",
+    "titleAccent": "tarinoita,",
+    "titleMiddle": "jotka",
+    "titleLast": "tuntuvat.",
+    "description": "Hei, olen Aino — Helsingissä työskentelevä visuaalinen suunnittelija ja valokuvaaja. Yhdistän harkitun muotoilun, uteliaisuuden ja ripauksen leikkisyyttä luoville brändeille ja kulttuuriprojekteille.",
+    "portfolioButton": "Tutustu töihini",
+    "portraitLabel": "PROFIILIKUVAN PAIKKAMERKKI",
+    "imageIndex": "01",
+    "imageCaption": "PROFIILI",
+    "stickerFirst": "Suunnittelua",
+    "stickerSecond": "ajatuksella"
+  },
+  "about": {
+    "sectionTitle": "Profiili",
+    "lead": "Hyvä suunnittelu tekee monimutkaisesta selkeää — ja tavallisesta vähän kiinnostavampaa.",
+    "paragraphs": [
+      "Olen luova tekijä, jota innostavat merkitykselliset ideat, kiinnostavat ihmiset ja yksityiskohdat, joilla on väliä. Suunnittelen brändejä ja digitaalisia kokemuksia, ja tallennan maailmaa myös kameran linssin läpi.",
+      "Inspiroidun erityisesti kulttuurista, analogisista pinnoista ja suomalaisen luonnon väreistä. Työskentelen mielelläni ideasta viimeiseen pikseliin asti — itsenäisesti tai osana hyvää tiimiä."
+    ],
+    "moreLink": "Lisää minusta",
+    "portraitPlaceholder": "KUVAN PAIKKAMERKKI"
+  },
+  "experienceSection": {
+    "title": "Kokemus",
+    "aside": "VALIKOITU TYÖKOKEMUS",
+    "items": [
+      {
+        "period": "2025 — NYKYHETKI",
+        "role": "Visuaalinen suunnittelija",
+        "company": "Studio Sumu · Helsinki",
+        "description": "Brändien ja digitaalisten kokemusten suunnittelua kulttuurin ja luovien alojen tekijöille."
+      },
+      {
+        "period": "2023 — 2025",
+        "role": "Graafinen suunnittelija",
+        "company": "Kajo Creative · Helsinki",
+        "description": "Kampanjoita, julkaisugrafiikkaa ja kuvallisia konsepteja monialaisessa suunnittelutiimissä."
+      },
+      {
+        "period": "2021 — 2023",
+        "role": "Suunnitteluharjoittelija",
+        "company": "Paperi Studio · Helsinki",
+        "description": "Ensimmäisiä asiakastöitä typografian, kuvituksen ja digitaalisen viestinnän parissa."
+      }
+    ]
+  },
+  "skillsSection": {
+    "title": "Osaaminen",
+    "items": [
+      "Visuaalinen suunnittelu",
+      "Valokuvaus",
+      "Käyttöliittymät",
+      "Brändi-identiteetit",
+      "Liikkuva kuva",
+      "Figma",
+      "Typografia",
+      "Art direction"
+    ]
+  },
+  "educationSection": {
+    "title": "Koulutus",
+    "period": "2018 — 2021",
+    "degree": "Medianomi, visuaalinen viestintä",
+    "school": "Metropolia Ammattikorkeakoulu · Helsinki",
+    "cvLink": "Pyydä CV PDF-muodossa",
+    "cvSubject": "CV"
+  },
+  "contact": {
+    "eyebrow": "ONKO MIELLESSÄSI JOTAKIN?",
+    "title": "Tehdään siitä totta."
+  },
+  "gallery": {
+    "eyebrow": "KUVITTEELLISIA PROJEKTEJA · 2024 — 2026",
+    "titleFirst": "Ideoita eri",
+    "titleAccent": "muodoissa.",
+    "description": "Kuvia, liikkuvaa kuvaa ja visuaalisia kokeiluja. Jokainen projekti alkaa uteliaisuudesta.",
+    "sectionTitle": "Galleria",
+    "sectionAside": "KAIKKI PROJEKTIT",
+    "placeholderLabel": "VISUAALINEN PAIKKAMERKKI",
+    "videoLabel": "Videon paikkamerkki",
+    "imageType": "KUVA",
+    "videoType": "VIDEO",
+    "note": "Profiilin henkilö-, koulutus-, työkokemus- ja projektitiedot ovat kuvitteellisia esimerkkejä. Galleriakuvitukset ovat paikkamerkkejä. Korvaa sisältö omillasi ennen julkaisua.",
+    "projects": [
+      {
+        "title": "Veden muisti",
+        "category": "Valokuvaus · 2026",
+        "description": "Valon ja veden muuttuvia pintoja tutkiva kuvasarja.",
+        "type": "image",
+        "shape": "portrait",
+        "art": "art-sunrise",
+        "media": "",
+        "label": "Lämpimän sävyinen valokuvaus- ja taideprojekti"
+      },
+      {
+        "title": "Kaiku — uusi ääni",
+        "category": "Brändi-ilme · 2026",
+        "description": "Tunnistettava visuaalinen maailma uudelle musiikkistudiolle.",
+        "type": "image",
+        "shape": "landscape",
+        "art": "art-motion",
+        "media": "",
+        "label": "Musiikkistudion värikäs graafinen brändi-ilme"
+      },
+      {
+        "title": "Jälki / 05",
+        "category": "Liikkuva kuva · 2025",
+        "description": "Lyhyt tunnelmapala käsityöstä, materiaaleista ja tekijöistä.",
+        "type": "video",
+        "shape": "square",
+        "art": "art-motion",
+        "media": "",
+        "label": "Tunnelmallisen lyhytelokuvan väripinta"
+      },
+      {
+        "title": "Arkipäivän museo",
+        "category": "Digitaalinen suunnittelu · 2025",
+        "description": "Pieni verkkonäyttely arkisten esineiden piilotarinoista.",
+        "type": "image",
+        "shape": "landscape",
+        "art": "art-form",
+        "media": "",
+        "label": "Digitaalisen näyttelyn veistoksellinen visuaalinen ilme"
+      },
+      {
+        "title": "Pohjoinen huone",
+        "category": "Valokuvaus · 2024",
+        "description": "Hidas katse pohjoisiin maisemiin ja vuodenaikojen sävyihin.",
+        "type": "image",
+        "shape": "portrait",
+        "art": "art-north",
+        "media": "",
+        "label": "Pohjoinen maisema pehmeässä, utuisessa valossa"
+      },
+      {
+        "title": "Pinta hengittää",
+        "category": "Liikkuva kuva · 2024",
+        "description": "Kokeellinen lyhytvideo keramiikan muodoista ja liikkeestä.",
+        "type": "video",
+        "shape": "square",
+        "art": "art-moments",
+        "media": "",
+        "label": "Kokeellinen, luonnonläheinen taidevideon kuva"
+      }
+    ]
+  },
+  "footer": {
+    "label": "KUVITTEELLINEN ESIMERKKIPROFIILI"
+  }
+}
