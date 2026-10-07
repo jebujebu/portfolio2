@@ -3,19 +3,20 @@
 :root {
   font-family: 'DM Sans', sans-serif;
   color: #eeeee8;
-  background: #101110;
+  background: #101213;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
   font-weight: 400;
-  --bg: #101110;
-  --surface: #171917;
+  --bg: #101213;
+  --surface: #171a1b;
   --text: #eeeee8;
   --muted: #95978f;
-  --line: #30332f;
-  --accent: #c9f27b;
+  --line: #303638;
+  --accent: #75ded8;
+  --accent-hover: #a2f3ee;
   --mono: 'DM Mono', monospace;
   --serif: 'Playfair Display', Georgia, serif;
 }
@@ -90,7 +91,7 @@ a:focus-visible {
   place-items: center;
   border-radius: 50%;
   background: var(--accent);
-  color: #151710;
+  color: #14201f;
   font-family: var(--serif);
   font-size: 20px;
   font-weight: 600;
@@ -109,7 +110,7 @@ a:focus-visible {
   align-items: center;
   height: 100%;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   transition: color 160ms ease;
 }
 
@@ -196,7 +197,7 @@ a:focus-visible {
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 12px #c9f27770;
+  box-shadow: 0 0 12px #75ded870;
 }
 
 .hero h1,
@@ -248,11 +249,11 @@ a:focus-visible {
 
 .button-primary {
   background: var(--accent);
-  color: #16190f;
+  color: #14201f;
 }
 
 .button-primary:hover {
-  background: #d8ff91;
+  background: var(--accent-hover);
 }
 
 .text-link {
@@ -281,8 +282,8 @@ a:focus-visible {
   width: 100%;
   aspect-ratio: 0.91;
   background:
-    linear-gradient(160deg, transparent 57%, #171916 57%),
-    radial-gradient(ellipse at 52% 52%, #403d34 0%, #22231e 45%, #191b18 78%);
+    linear-gradient(160deg, transparent 57%, #171a1b 57%),
+    radial-gradient(ellipse at 52% 52%, #3b4240 0%, #222729 45%, #191b1c 78%);
 }
 
 .portrait-orbit {
@@ -320,7 +321,7 @@ a:focus-visible {
   width: 130%;
   height: 49%;
   border-radius: 50% 50% 0 0;
-  background: linear-gradient(135deg, #514a3e, #292a24 67%);
+  background: linear-gradient(135deg, #435753, #293435 67%);
   transform: rotate(-10deg);
 }
 
@@ -328,7 +329,7 @@ a:focus-visible {
   bottom: -18%;
   left: 19%;
   height: 42%;
-  background: linear-gradient(135deg, #33352e, #171916 75%);
+  background: linear-gradient(135deg, #304441, #171a1b 75%);
   transform: rotate(13deg);
 }
 
@@ -372,7 +373,7 @@ a:focus-visible {
   justify-content: center;
   border-radius: 50%;
   background: var(--accent);
-  color: #1a1d13;
+  color: #14201f;
   font-size: 10px;
   line-height: 1.5;
   transform: rotate(9deg);
@@ -449,7 +450,7 @@ a:focus-visible {
 }
 
 .experience-list {
-  border-top: 1px solid #282b27;
+  border-top: 1px solid #282d2e;
 }
 
 .experience-item {
@@ -458,7 +459,7 @@ a:focus-visible {
   align-items: center;
   gap: 22px;
   min-height: 102px;
-  border-bottom: 1px solid #282b27;
+  border-bottom: 1px solid #282d2e;
 }
 
 .experience-period {
@@ -541,8 +542,8 @@ a:focus-visible {
 
 .contact-band {
   margin-top: 10px;
-  background: #c9f27b;
-  color: #171a12;
+  background: var(--accent);
+  color: #14201f;
 }
 
 .contact-inner {
@@ -554,7 +555,7 @@ a:focus-visible {
 }
 
 .contact-inner .eyebrow {
-  color: #454b38;
+  color: #385653;
 }
 
 .contact-inner h2 {
@@ -566,12 +567,12 @@ a:focus-visible {
 }
 
 .button-light {
-  border: 1px solid #657748;
-  color: #1b1e15;
+  border: 1px solid #477d79;
+  color: #14201f;
 }
 
 .button-light:hover {
-  background: #b8e568;
+  background: var(--accent-hover);
 }
 
 .gallery-page {
@@ -642,7 +643,7 @@ a:focus-visible {
   overflow: hidden;
   width: 100%;
   aspect-ratio: 1;
-  background-color: #272a24;
+  background-color: #272c2d;
   transition:
     filter 180ms ease,
     transform 180ms ease;
@@ -665,7 +666,7 @@ a:focus-visible {
   width: min(88vw, 1120px);
   height: min(78vh, 780px);
   aspect-ratio: auto;
-  background-color: #171917;
+  background-color: #171a1b;
 }
 
 .lightbox-art .project-media {
@@ -683,35 +684,35 @@ a:focus-visible {
   background:
     radial-gradient(ellipse at 72% 30%, #e5aa72 0 8%, transparent 8.4%),
     radial-gradient(ellipse at 29% 72%, #b46356 0 18%, transparent 18.5%),
-    linear-gradient(125deg, #35433c 0%, #697660 35%, #bc896a 66%, #292c2a 100%);
+    linear-gradient(125deg, #35413f 0%, #668783 35%, #bc896a 66%, #292d2e 100%);
 }
 
 .art-form {
   background:
     radial-gradient(ellipse at 50% 50%, transparent 0 16%, #d6ad7f 16.5% 26%, transparent 26.5%),
     radial-gradient(ellipse at 49% 50%, #7e594b 0 35%, transparent 35.5%),
-    linear-gradient(140deg, #333a32, #806851 55%, #252923);
+    linear-gradient(140deg, #333d3b, #806851 55%, #252a2b);
 }
 
 .art-north {
   background:
     linear-gradient(174deg, transparent 59%, #9b9c87 59.4% 60%, transparent 60.4%),
-    linear-gradient(163deg, transparent 55%, #474c43 55.4% 66%, transparent 66.4%),
-    linear-gradient(180deg, #34423e 0%, #859081 55%, #b0a58e 100%);
+    linear-gradient(163deg, transparent 55%, #46514e 55.4% 66%, transparent 66.4%),
+    linear-gradient(180deg, #344846 0%, #829a94 55%, #b0a58e 100%);
 }
 
 .art-moments {
   background:
     radial-gradient(ellipse at 43% 38%, #e4b375 0 13%, transparent 13.4%),
     radial-gradient(ellipse at 70% 62%, #9e5847 0 16%, transparent 16.4%),
-    linear-gradient(145deg, #28352f, #617564 48%, #b07b5e 80%, #35342d);
+    linear-gradient(145deg, #293d39, #648681 48%, #b07b5e 80%, #353638);
 }
 
 .art-rhythm {
   background:
     radial-gradient(circle at 50% 50%, transparent 0 22%, #dca86e 22.5% 23.3%, transparent 23.8%),
-    radial-gradient(circle at 50% 50%, #66715d 0 35%, transparent 35.5%),
-    linear-gradient(135deg, #333e36, #9c775d 70%, #33322d);
+    radial-gradient(circle at 50% 50%, #648681 0 35%, transparent 35.5%),
+    linear-gradient(135deg, #344542, #9c775d 70%, #333537);
 }
 
 .image-lightbox {
@@ -731,7 +732,7 @@ a:focus-visible {
 }
 
 .image-lightbox::backdrop {
-  background: #080908ed;
+  background: #080b0ced;
   backdrop-filter: blur(8px);
 }
 
@@ -745,7 +746,7 @@ a:focus-visible {
   place-items: center;
   border: 1px solid #ffffff50;
   border-radius: 50%;
-  background: #171917cc;
+  background: #171a1bcc;
   color: var(--text);
   cursor: pointer;
   transition:
@@ -757,7 +758,7 @@ a:focus-visible {
 .lightbox-close:hover,
 .lightbox-arrow:hover {
   border-color: var(--accent);
-  background: #242821;
+  background: #222c2b;
   color: var(--accent);
 }
 
@@ -819,8 +820,8 @@ a:focus-visible {
   gap: 15px;
   margin-top: 57px;
   padding: 20px 22px;
-  border: 1px solid #30332f;
-  background: #151714;
+  border: 1px solid #303638;
+  background: #151819;
 }
 
 .note-star {
@@ -907,7 +908,7 @@ a:focus-visible {
   }
 
   .nav-link {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .header-contact {
