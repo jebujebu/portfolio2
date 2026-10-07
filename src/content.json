@@ -61,10 +61,11 @@
       },
       {
         "period": "2021 — 2023",
-        "role": "Suunnitteluharjoittelija",
-        "company": "Paperi Studio · Helsinki",
-        "description": "Ensimmäisiä asiakastöitä typografian, kuvituksen ja digitaalisen viestinnän parissa."
+        "role": "Valokuvaaja ja suunnittelija",
+        "company": "Freelance · Helsinki",
+        "description": "Kuvallisia konsepteja, valokuvausta ja visuaalista suunnittelua kulttuurialan projekteihin."
       }
+
     ]
   },
   "skillsSection": {
@@ -75,7 +76,6 @@
       "Käyttöliittymät",
       "Brändi-identiteetit",
       "Liikkuva kuva",
-      "Figma",
       "Typografia",
       "Art direction"
     ]
@@ -98,7 +98,7 @@
     "titleAccent": "muodoissa.",
     "description": "Kuvia, liikkuvaa kuvaa ja visuaalisia kokeiluja. Jokainen projekti alkaa uteliaisuudesta.",
     "sectionTitle": "Galleria",
-    "sectionAside": "KAIKKI PROJEKTIT",
+    "sectionAside": "KAIKKI KUVAT",
     "placeholderLabel": "VISUAALINEN PAIKKAMERKKI",
     "videoLabel": "Videon paikkamerkki",
     "imageType": "KUVA",

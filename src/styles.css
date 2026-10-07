@@ -177,9 +177,6 @@ a:focus-visible {
 .hero-meta,
 .image-index,
 .portrait-caption,
-.placeholder-label,
-.project-index,
-.project-type,
 .experience-period,
 .site-footer > span {
   font-family: var(--mono);
@@ -624,12 +621,36 @@ a:focus-visible {
   grid-column: span 1;
 }
 
+.gallery-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.gallery-image-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
 .project-art {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1.05;
+  aspect-ratio: 1;
   background-color: #272a24;
+  transition:
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.gallery-image-button:hover .project-art {
+  filter: brightness(1.12);
+  transform: scale(1.015);
 }
 
 .project-media {
@@ -640,12 +661,15 @@ a:focus-visible {
   object-fit: cover;
 }
 
-.project-card.portrait .project-art {
-  aspect-ratio: 0.96;
+.lightbox-art {
+  width: min(88vw, 1120px);
+  height: min(78vh, 780px);
+  aspect-ratio: auto;
+  background-color: #171917;
 }
 
-.project-card.square .project-art {
-  aspect-ratio: 1;
+.lightbox-art .project-media {
+  object-fit: contain;
 }
 
 .art-sunrise {
@@ -690,78 +714,103 @@ a:focus-visible {
     linear-gradient(135deg, #333e36, #9c775d 70%, #33322d);
 }
 
-.placeholder-label {
-  position: absolute;
-  top: 14px;
-  left: 15px;
-  padding: 6px 8px;
-  background: #11130e75;
-  color: #f0eadb;
-  font-size: 7px;
-  letter-spacing: 0.08em;
-}
-
-.project-index {
-  position: absolute;
-  right: 15px;
-  bottom: 13px;
-  color: #f0eadb;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.image-lightbox {
+  position: fixed;
   display: grid;
-  width: 49px;
-  height: 49px;
+  max-width: none;
+  max-height: none;
   place-items: center;
-  border: 1px solid #ffffff94;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.image-lightbox[open] {
+  animation: lightbox-appear 160ms ease-out;
+}
+
+.image-lightbox::backdrop {
+  background: #080908ed;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #ffffff50;
   border-radius: 50%;
-  background: #14151167;
-  backdrop-filter: blur(5px);
-  transform: translate(-50%, -50%);
+  background: #171917cc;
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
-.play-button svg {
-  width: 17px;
-  height: 17px;
-  fill: #fff;
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  border-color: var(--accent);
+  background: #242821;
+  color: var(--accent);
 }
 
-.project-info {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 15px;
+.lightbox-close {
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 1;
 }
 
-.project-info h3 {
-  margin: 0 0 6px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.project-info > div > span {
-  color: #898b83;
-  font-size: 10px;
+.lightbox-arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
 }
 
-.project-info .project-copy > p {
-  max-width: 390px;
-  margin: 7px 0 0;
-  color: #85877f;
-  font-size: 10px;
-  line-height: 1.65;
+.lightbox-arrow.lightbox-previous svg {
+  transform: rotate(180deg);
 }
 
-.project-type {
-  padding: 5px 7px;
-  border: 1px solid #383a34;
-  color: #a8aa9f;
-  font-size: 7px;
+.lightbox-previous {
+  left: -68px;
+}
+
+.lightbox-next {
+  right: -68px;
+}
+
+.lightbox-close:focus-visible,
+.lightbox-arrow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@keyframes lightbox-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .gallery-note {
@@ -954,13 +1003,12 @@ a:focus-visible {
     gap: 27px 16px;
   }
 
-  .project-info {
-    flex-direction: column;
-    gap: 8px;
+  .lightbox-previous {
+    left: 10px;
   }
 
-  .project-info h3 {
-    font-size: 12px;
+  .lightbox-next {
+    right: 10px;
   }
 
   .site-footer {
@@ -1022,15 +1070,22 @@ a:focus-visible {
     gap: 27px;
   }
 
-  .project-art,
-  .project-card.portrait .project-art,
-  .project-card.square .project-art {
-    aspect-ratio: 1.15;
+  .lightbox-art {
+    width: 88vw;
+    height: 72vh;
   }
 
-  .project-info {
-    flex-direction: row;
-    align-items: center;
+  .lightbox-close {
+    top: -48px;
+    right: 0;
+  }
+
+  .lightbox-previous {
+    left: 7px;
+  }
+
+  .lightbox-next {
+    right: 7px;
   }
 
   .gallery-note {

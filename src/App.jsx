@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import content from './content.json'
 
 function ArrowIcon() {
@@ -31,7 +31,9 @@ function Header({ page, onNavigate }) {
         >
           {content.navigation.gallery}{' '}
           <span className="nav-count">
-            {String(content.gallery.projects.length).padStart(2, '0')}
+            {String(
+              content.gallery.projects.filter((project) => project.type === 'image').length,
+            ).padStart(2, '0')}
           </span>
         </a>
       </nav>
@@ -194,7 +196,57 @@ function ResumePage({ onNavigate }) {
   )
 }
 
+function GalleryArtwork({ project, lightbox = false }) {
+  return (
+    <div
+      className={`project-art ${project.art}${lightbox ? ' lightbox-art' : ''}`}
+      role="img"
+      aria-label={project.label}
+    >
+      {project.media && <img className="project-media" src={project.media} alt="" />}
+    </div>
+  )
+}
+
 function GalleryPage() {
+  const imageProjects = content.gallery.projects.filter((project) => project.type === 'image')
+  const [selectedIndex, setSelectedIndex] = useState(null)
+  const dialogRef = useRef(null)
+  const isOpen = selectedIndex !== null
+  const selectedProject = isOpen ? imageProjects[selectedIndex] : null
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!isOpen || !dialog) return undefined
+
+    dialog.showModal()
+    return () => dialog.close()
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault()
+        setSelectedIndex((index) => (index - 1 + imageProjects.length) % imageProjects.length)
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault()
+        setSelectedIndex((index) => (index + 1) % imageProjects.length)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [imageProjects.length, isOpen])
+
+  const showPreviousImage = () => {
+    setSelectedIndex((index) => (index - 1 + imageProjects.length) % imageProjects.length)
+  }
+  const showNextImage = () => {
+    setSelectedIndex((index) => (index + 1) % imageProjects.length)
+  }
+
   return (
     <main className="gallery-page section-shell">
       <div className="gallery-intro">
@@ -212,53 +264,56 @@ function GalleryPage() {
         {content.gallery.sectionTitle}
       </SectionHeading>
       <div className="gallery-grid">
-        {content.gallery.projects.map((project, index) => (
-          <article className={`project-card ${project.shape}`} key={project.title}>
-            <div
-              className={`project-art ${project.art}`}
-              role={project.media ? undefined : 'img'}
-              aria-label={project.media ? undefined : project.label}
-            >
-              {project.media ? (
-                project.type === 'video' ? (
-                  <video
-                    className="project-media"
-                    src={project.media}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    aria-label={project.label}
-                  />
-                ) : (
-                  <img className="project-media" src={project.media} alt={project.label} />
-                )
-              ) : (
-                <>
-                  <span className="placeholder-label">{content.gallery.placeholderLabel}</span>
-                  {project.type === 'video' && (
-                    <span className="play-button" aria-label={content.gallery.videoLabel}>
-                      <svg aria-hidden="true" viewBox="0 0 20 20">
-                        <path d="m7 4.5 9 5.5-9 5.5v-11Z" />
-                      </svg>
-                    </span>
-                  )}
-                </>
-              )}
-              <span className="project-index">0{index + 1}</span>
-            </div>
-            <div className="project-info">
-              <div className="project-copy">
-                <h3>{project.title}</h3>
-                <span>{project.category}</span>
-                <p>{project.description}</p>
-              </div>
-              <span className="project-type">
-                {project.type === 'video' ? content.gallery.videoType : content.gallery.imageType}
-              </span>
-            </div>
-          </article>
+        {imageProjects.map((project, index) => (
+          <button
+            className={`gallery-image-button project-card ${project.shape}`}
+            key={project.title}
+            type="button"
+            aria-haspopup="dialog"
+            aria-label={`Avaa kuva ${index + 1}: ${project.label}`}
+            onClick={() => setSelectedIndex(index)}
+          >
+            <GalleryArtwork project={project} />
+          </button>
         ))}
       </div>
+      {selectedProject && (
+        <dialog
+          className="image-lightbox"
+          ref={dialogRef}
+          aria-label={selectedProject.label}
+          onClick={(event) => {
+            if (event.target === dialogRef.current) setSelectedIndex(null)
+          }}
+          onClose={() => setSelectedIndex(null)}
+        >
+          <button
+            className="lightbox-close"
+            type="button"
+            aria-label="Sulje kuva"
+            onClick={() => setSelectedIndex(null)}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <button
+            className="lightbox-arrow lightbox-previous"
+            type="button"
+            aria-label="Edellinen kuva"
+            onClick={showPreviousImage}
+          >
+            <ArrowIcon />
+          </button>
+          <GalleryArtwork project={selectedProject} lightbox />
+          <button
+            className="lightbox-arrow lightbox-next"
+            type="button"
+            aria-label="Seuraava kuva"
+            onClick={showNextImage}
+          >
+            <ArrowIcon />
+          </button>
+        </dialog>
+      )}
       <div className="gallery-note">
         <span className="note-star">✳</span>
         <p>{content.gallery.note}</p>
