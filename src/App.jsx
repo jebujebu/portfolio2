@@ -94,9 +94,6 @@ function ResumePage({ onNavigate }) {
             <a className="button button-primary" href="#gallery" onClick={() => onNavigate('gallery')}>
               {content.hero.portfolioButton} <ArrowIcon />
             </a>
-            <a className="text-link" href={`mailto:${content.identity.email}`}>
-              {content.navigation.contactLink}
-            </a>
           </div>
           <div className="hero-meta">
             <span>{content.identity.location.toLocaleUpperCase('fi-FI')}</span>
