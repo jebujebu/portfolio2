@@ -26,11 +26,9 @@
     "titleLast": "tuntuvat.",
     "description": "Moi, olen Jesper, Espoossa asuva 3D-muotoilija, joka on kiinnostunut 3D-valaistuksesta, renderöinnistä ja näyttävistä maisemista. ",
     "portfolioButton": "Tutustu töihini",
-    "portraitLabel": "PROFIILIKUVAN PAIKKAMERKKI",
+    "portraitLabel": "Profiilikuva",
     "imageIndex": "01",
-    "imageCaption": "PROFIILI",
-    "stickerFirst": "Suunnittelua",
-    "stickerSecond": "ajatuksella"
+    "imageCaption": "PROFIILI"
   },
   "about": {
     "sectionTitle": "Profiili",
@@ -81,8 +79,8 @@
   },
   "educationSection": {
     "title": "Koulutus",
-    "period": "2018 — 2021",
-    "degree": "Medianomi, visuaalinen viestintä",
+    "period": "2021 — 2026",
+    "degree": "Muotoilija, 3D-animointi ja -visualisointi",
     "school": "Metropolia Ammattikorkeakoulu · Helsinki",
     "cvLink": "Pyydä CV PDF-muodossa",
     "cvSubject": "CV"
@@ -167,6 +165,6 @@
     ]
   },
   "footer": {
-    "label": "KUVITTEELLINEN ESIMERKKIPROFIILI"
+    "label": ""
   }
 }

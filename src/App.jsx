@@ -56,19 +56,10 @@ function SectionHeading({ number, children, aside }) {
   )
 }
 
-function PortraitPlaceholder() {
+function PortraitImage() {
   return (
-    <div
-      className="portrait-placeholder"
-      role="img"
-      aria-label={content.hero.portraitLabel}
-    >
-      <div className="portrait-orbit orbit-one" />
-      <div className="portrait-orbit orbit-two" />
-      <div className="portrait-sun" />
-      <div className="portrait-hill hill-back" />
-      <div className="portrait-hill hill-front" />
-      <span className="portrait-caption">{content.about.portraitPlaceholder}</span>
+    <div className="portrait-placeholder">
+      <img className="portrait-image" src="/pics/ct02.jpg" alt={content.hero.portraitLabel} />
     </div>
   )
 }
@@ -101,16 +92,11 @@ function ResumePage({ onNavigate }) {
           </div>
         </div>
         <div className="hero-visual">
-          <PortraitPlaceholder />
+          <PortraitImage />
           <div className="image-index">
             <span>{content.hero.imageIndex}</span>
             <span className="index-line" />
             <span>{content.about.sectionTitle.toLocaleUpperCase('fi-FI')}</span>
-          </div>
-          <div className="hero-sticker">
-            <span>{content.hero.stickerFirst}</span>
-            <span>{content.hero.stickerSecond}</span>
-            <span className="sticker-star">✳</span>
           </div>
         </div>
       </section>

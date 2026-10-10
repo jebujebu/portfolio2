@@ -166,7 +166,7 @@ a:focus-visible {
 .hero {
   min-height: 590px;
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 56px;
   padding-block: 58px 70px;
@@ -272,7 +272,7 @@ a:focus-visible {
 .hero-visual {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   justify-self: end;
 }
 
@@ -281,9 +281,12 @@ a:focus-visible {
   overflow: hidden;
   width: 100%;
   aspect-ratio: 0.91;
-  background:
-    linear-gradient(160deg, transparent 57%, #171a1b 57%),
-    radial-gradient(ellipse at 52% 52%, #3b4240 0%, #222729 45%, #191b1c 78%);
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .portrait-orbit {
@@ -359,29 +362,6 @@ a:focus-visible {
   width: 24px;
   height: 1px;
   background: #585b52;
-}
-
-.hero-sticker {
-  position: absolute;
-  right: -35px;
-  bottom: 56px;
-  display: flex;
-  width: 110px;
-  height: 110px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #14201f;
-  font-size: 10px;
-  line-height: 1.5;
-  transform: rotate(9deg);
-}
-
-.sticker-star {
-  margin-top: 2px;
-  font-size: 17px;
 }
 
 .section-block {
@@ -929,14 +909,6 @@ a:focus-visible {
   .hero-visual {
     width: min(100% - 15px, 430px);
     justify-self: center;
-  }
-
-  .hero-sticker {
-    right: -15px;
-    bottom: 42px;
-    width: 91px;
-    height: 91px;
-    font-size: 9px;
   }
 
   .hero-meta {
