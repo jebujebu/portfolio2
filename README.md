@@ -50,3 +50,9 @@ kuvaprojektin `"image"`. Projektin `shape` (`"portrait"`, `"landscape"` tai
 `"square"`) ja `art`-luokka valitsevat kortin muodon ja paikkamerkin tyylin.
 Kuvien ja videoiden polut osoittavat `public`-kansion sisällä olevaan
 tiedostoon.
+
+Valaistus- ja mallinnuskuvat voit lisätä suoraan kansioihin
+`public/pics/valaistus` ja `public/pics/mallinnus`. Galleria lukee kansioiden
+kuvat automaattisesti ja sijoittaa ne vastaavaan osioon. Tuetut tiedostomuodot
+ovat JPG, JPEG, PNG, WebP, GIF ja AVIF. Lisää kuvatiedostot ennen
+julkaisuversiota, jotta ne sisältyvät buildiin.

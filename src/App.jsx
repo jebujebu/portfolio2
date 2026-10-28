@@ -1,5 +1,32 @@
 import { useEffect, useRef, useState } from 'react'
 import content from './content.json'
+import { galleryImages } from 'virtual:gallery-images'
+
+const galleryCategories = [
+  { id: 'valaistus', title: 'Valaistus', number: '06' },
+  { id: 'mallinnus', title: 'Mallinnus', number: '07' },
+]
+
+const folderProjectsByCategory = Object.fromEntries(
+  galleryCategories.map(({ id }) => [
+    id,
+    galleryImages[id].map((filename) => {
+      const title = filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ')
+      return {
+        title,
+        type: 'image',
+        shape: 'square',
+        art: '',
+        media: `${import.meta.env.BASE_URL}pics/${id}/${encodeURIComponent(filename)}`,
+        label: title,
+      }
+    }),
+  ]),
+)
+const folderProjectCount = galleryCategories.reduce(
+  (count, { id }) => count + folderProjectsByCategory[id].length,
+  0,
+)
 
 function ArrowIcon() {
   return (
@@ -32,7 +59,7 @@ function Header({ page, onNavigate }) {
           {content.navigation.gallery}{' '}
           <span className="nav-count">
             {String(
-              content.gallery.projects.filter((project) => project.type === 'image').length,
+              folderProjectCount,
             ).padStart(2, '0')}
           </span>
         </a>
@@ -193,11 +220,23 @@ function GalleryArtwork({ project, lightbox = false }) {
 }
 
 function GalleryPage() {
-  const imageProjects = content.gallery.projects.filter((project) => project.type === 'image')
+  const galleryGroups = galleryCategories.map((category, index) => ({
+      ...category,
+      number: String(index + 5).padStart(2, '0'),
+      aside: `${folderProjectsByCategory[category.id].length.toString().padStart(2, '0')} KUVAA`,
+      projects: folderProjectsByCategory[category.id],
+    }))
+  const allProjects = galleryGroups.flatMap((group) => group.projects)
+  let projectOffset = 0
+  const indexedGalleryGroups = galleryGroups.map((group) => {
+    const startIndex = projectOffset
+    projectOffset += group.projects.length
+    return { ...group, startIndex }
+  })
   const [selectedIndex, setSelectedIndex] = useState(null)
   const dialogRef = useRef(null)
   const isOpen = selectedIndex !== null
-  const selectedProject = isOpen ? imageProjects[selectedIndex] : null
+  const selectedProject = isOpen ? allProjects[selectedIndex] : null
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -213,22 +252,22 @@ function GalleryPage() {
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowLeft') {
         event.preventDefault()
-        setSelectedIndex((index) => (index - 1 + imageProjects.length) % imageProjects.length)
+        setSelectedIndex((index) => (index - 1 + allProjects.length) % allProjects.length)
       } else if (event.key === 'ArrowRight') {
         event.preventDefault()
-        setSelectedIndex((index) => (index + 1) % imageProjects.length)
+        setSelectedIndex((index) => (index + 1) % allProjects.length)
       }
     }
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [imageProjects.length, isOpen])
+  }, [allProjects.length, isOpen])
 
   const showPreviousImage = () => {
-    setSelectedIndex((index) => (index - 1 + imageProjects.length) % imageProjects.length)
+    setSelectedIndex((index) => (index - 1 + allProjects.length) % allProjects.length)
   }
   const showNextImage = () => {
-    setSelectedIndex((index) => (index + 1) % imageProjects.length)
+    setSelectedIndex((index) => (index + 1) % allProjects.length)
   }
 
   return (
@@ -244,23 +283,33 @@ function GalleryPage() {
         </h1>
         <p>{content.gallery.description}</p>
       </div>
-      <SectionHeading number="05" aside={content.gallery.sectionAside}>
-        {content.gallery.sectionTitle}
-      </SectionHeading>
-      <div className="gallery-grid">
-        {imageProjects.map((project, index) => (
-          <button
-            className={`gallery-image-button project-card ${project.shape}`}
-            key={project.title}
-            type="button"
-            aria-haspopup="dialog"
-            aria-label={`Avaa kuva ${index + 1}: ${project.label}`}
-            onClick={() => setSelectedIndex(index)}
-          >
-            <GalleryArtwork project={project} />
-          </button>
-        ))}
-      </div>
+      {indexedGalleryGroups.map((group) => (
+        <section className="gallery-category" key={group.title}>
+          <SectionHeading number={group.number} aside={group.aside}>
+            {group.title}
+          </SectionHeading>
+          {group.projects.length > 0 ? (
+            <div className="gallery-grid">
+              {group.projects.map((project, index) => (
+                <button
+                  className={`gallery-image-button project-card ${project.shape}`}
+                  key={project.media || project.title}
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-label={`Avaa kuva ${group.startIndex + index + 1}: ${project.label}`}
+                  onClick={() => setSelectedIndex(group.startIndex + index)}
+                >
+                  <GalleryArtwork project={project} />
+                </button>
+              ))}
+            </div>
+          ) : (
+            <p className="gallery-empty">
+              Lisää kuvia <code>public/pics/{group.id}/</code>-kansioon, niin ne näkyvät tässä.
+            </p>
+          )}
+        </section>
+      ))}
       {selectedProject && (
         <dialog
           className="image-lightbox"

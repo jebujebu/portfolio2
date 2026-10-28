@@ -589,9 +589,22 @@ a:focus-visible {
   line-height: 1.7;
 }
 
-.gallery-page > .section-heading {
+.gallery-category > .section-heading {
+  margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
+}
+
+.gallery-empty {
+  margin: 0;
+  color: #a4a69e;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.gallery-empty code {
+  color: var(--accent);
+  font-family: var(--mono);
 }
 
 .gallery-grid {
