@@ -96,7 +96,11 @@ function SectionHeading({ number, children, aside }) {
 function PortraitImage() {
   return (
     <div className="portrait-placeholder">
-      <img className="portrait-image" src="/pics/ct02.jpg" alt={content.hero.portraitLabel} />
+      <img
+        className="portrait-image"
+        src={`${import.meta.env.BASE_URL}pics/ct02.jpg`}
+        alt={content.hero.portraitLabel}
+      />
     </div>
   )
 }
