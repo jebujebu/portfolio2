@@ -7,8 +7,7 @@
     "name": "Jesper Stoor",
     "monogram": "JS",
     "email": "jesper.stoor@hotmail.com",
-    "location": "Espoo, Suomi",
-    "coordinates": ""
+    "location": "Espoo, Suomi"
   },
   "navigation": {
     "label": "Päänavigaatio",
@@ -19,16 +18,14 @@
     "galleryLink": "Galleria ↗"
   },
   "hero": {
-    "eyebrow": "KÄYTETTÄVISSÄ PROJEKTEIHIN",
     "titleFirst": "varjoja",
     "titleAccent": "Valoa,",
     "titleMiddle": "ja vähän",
     "titleLast": "taikoja.",
-    "description": "Moi, olen Jesper, Espoossa asuva 3D-muotoilija, joka on kiinnostunut 3D-valaistuksesta, renderöinnistä ja 3D:stä yleisesti. ",
+    "description": "Moi, olen Jesper, Espoossa asuva 3D-artisti, joka on kiinnostunut 3D-valaistuksesta, renderöinnistä ja 3D:stä yleisesti. ",
     "portfolioButton": "Tutustu töihini",
     "portraitLabel": "Profiilikuva",
-    "imageIndex": "01",
-    "imageCaption": "PROFIILI"
+    "imageIndex": "01"
   },
   "about": {
     "sectionTitle": "Profiili",
@@ -36,12 +33,10 @@
     "paragraphs": [
       "Luon 3D-ympäristöjä, joissa futuristinen estetiikka, tunnelmallinen valaistus ja tarkkaan viimeistellyt materiaalit luovat jotain epätavallista. Minua kiinnostaa, kuinka pitkälle digitaalisella kuvalla voi viedä todellisuuden tuntua ja visuaalista mielikuvitusta.",
       "Inspiroidun futuristisista scifi-maailmoista, ja vaikuttavista digitaalisista maisemista, joissa todellisuus ja mielikuvitus sulautuvat yhteen. Minua kiehtovat tuntemattomat ympäristöt, monumentaalinen mittakaava ja tunnelmat, jotka saavat kuvittelemaan, miltä jokin täysin uusi maailma voisi tuntua."
-    ],
-    "portraitPlaceholder": "KUVAN PAIKKAMERKKI"
+    ]
   },
   "experienceSection": {
     "title": "Kokemus",
-    "aside": "",
     "items": [
       {
         "period": "2021 — 2026",
@@ -53,7 +48,7 @@
         "period": "2019 — 2021",
         "role": "Minecraft rakentaminen ja renderöinti",
         "company": "",
-        "description": "Olen suunnitellut ja rakentanut digitaalisia ympäristöjä Minecraft-pelissä sekä luonut renderöintejä omista ja muiden tekijöiden rakennelmista. Työskentelyssäni yhdistyvät ympäristösuunnittelu, sommittelu, valaistus ja visuaalisen tunnelman rakentaminen. Projektit ovat kehittäneet kykyäni muuttaa digitaalisia rakennelmia viimeistellyiksi visuaalisiksi kokonaisuuksiksi."
+        "description": "Olen suunnitellut ja rakentanut digitaalisia ympäristöjä Minecraft-pelissä sekä luonut renderöintejä omista ja muiden tekijöiden rakennelmista. Työskentelyssäni yhdistyivät ympäristösuunnittelu, sommittelu, valaistus ja visuaalisen tunnelman rakentaminen. Projektit ovat kehittäneet kykyäni muuttaa digitaalisia rakennelmia viimeistellyiksi visuaalisiksi kokonaisuuksiksi."
       }
     ]
   },
@@ -81,79 +76,6 @@
     "title": "Tehdään siitä totta."
   },
   "gallery": {
-    "eyebrow": "",
-    "titleFirst": "Portfolio",
-    "titleAccent": "",
-    "sectionTitle": "Galleria",
-    "sectionAside": "KAIKKI KUVAT",
-    "placeholderLabel": "VISUAALINEN PAIKKAMERKKI",
-    "videoLabel": "Videon paikkamerkki",
-    "imageType": "KUVA",
-    "videoType": "VIDEO",
-    "projects": [
-      {
-        "title": "Veden muisti",
-        "category": "Valokuvaus · 2026",
-        "description": "Valon ja veden muuttuvia pintoja tutkiva kuvasarja.",
-        "type": "image",
-        "shape": "portrait",
-        "art": "art-sunrise",
-        "media": "",
-        "label": "Lämpimän sävyinen valokuvaus- ja taideprojekti"
-      },
-      {
-        "title": "Kaiku — uusi ääni",
-        "category": "Brändi-ilme · 2026",
-        "description": "Tunnistettava visuaalinen maailma uudelle musiikkistudiolle.",
-        "type": "image",
-        "shape": "landscape",
-        "art": "art-motion",
-        "media": "",
-        "label": "Musiikkistudion värikäs graafinen brändi-ilme"
-      },
-      {
-        "title": "Jälki / 05",
-        "category": "Liikkuva kuva · 2025",
-        "description": "Lyhyt tunnelmapala käsityöstä, materiaaleista ja tekijöistä.",
-        "type": "video",
-        "shape": "square",
-        "art": "art-motion",
-        "media": "",
-        "label": "Tunnelmallisen lyhytelokuvan väripinta"
-      },
-      {
-        "title": "Arkipäivän museo",
-        "category": "Digitaalinen suunnittelu · 2025",
-        "description": "Pieni verkkonäyttely arkisten esineiden piilotarinoista.",
-        "type": "image",
-        "shape": "landscape",
-        "art": "art-form",
-        "media": "",
-        "label": "Digitaalisen näyttelyn veistoksellinen visuaalinen ilme"
-      },
-      {
-        "title": "Pohjoinen huone",
-        "category": "Valokuvaus · 2024",
-        "description": "Hidas katse pohjoisiin maisemiin ja vuodenaikojen sävyihin.",
-        "type": "image",
-        "shape": "portrait",
-        "art": "art-north",
-        "media": "",
-        "label": "Pohjoinen maisema pehmeässä, utuisessa valossa"
-      },
-      {
-        "title": "Pinta hengittää",
-        "category": "Liikkuva kuva · 2024",
-        "description": "Kokeellinen lyhytvideo keramiikan muodoista ja liikkeestä.",
-        "type": "video",
-        "shape": "square",
-        "art": "art-moments",
-        "media": "",
-        "label": "Kokeellinen, luonnonläheinen taidevideon kuva"
-      }
-    ]
-  },
-  "footer": {
-    "label": ""
+    "title": "Portfolio"
   }
 }

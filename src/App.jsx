@@ -106,10 +106,6 @@ function ResumePage({ onNavigate }) {
     <main>
       <section className="hero section-shell">
         <div className="hero-copy">
-          <div className="eyebrow">
-            <span className="status-dot" />
-            {content.hero.eyebrow}
-          </div>
           <h1>
             <span className="hero-title-accent">{content.hero.titleAccent}</span>{' '}
             {content.hero.titleFirst}
@@ -126,7 +122,6 @@ function ResumePage({ onNavigate }) {
           </div>
           <div className="hero-meta">
             <span>{content.identity.location.toLocaleUpperCase('fi-FI')}</span>
-            <span>{content.identity.coordinates}</span>
           </div>
         </div>
         <div className="hero-visual">
@@ -152,7 +147,7 @@ function ResumePage({ onNavigate }) {
       </section>
 
       <section className="experience section-shell section-block">
-        <SectionHeading number="02" aside={content.experienceSection.aside}>
+        <SectionHeading number="02">
           {content.experienceSection.title}
         </SectionHeading>
         <div className="experience-list">
@@ -274,10 +269,7 @@ function GalleryPage() {
   return (
     <main className="gallery-page section-shell">
       <div className="gallery-intro">
-        <h1>
-          {content.gallery.titleFirst}
-          {content.gallery.titleAccent && <span>{content.gallery.titleAccent}</span>}
-        </h1>
+        <h1>{content.gallery.title}</h1>
       </div>
       {indexedGalleryGroups.map((group) => (
         <section className="gallery-category" key={group.title}>
@@ -354,9 +346,7 @@ function Footer({ onNavigate }) {
         <span className="wordmark-mark">{content.identity.monogram}</span>
         <span>{content.identity.name}</span>
       </a>
-      <span>
-        {content.footer.label} · {new Date().getFullYear()}
-      </span>
+      <span>· {new Date().getFullYear()}</span>
       <div className="footer-links">
         <a href={`mailto:${content.identity.email}`}>{content.navigation.emailLink}</a>
         <a href="#gallery">{content.navigation.galleryLink}</a>
