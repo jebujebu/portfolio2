@@ -19,7 +19,7 @@
     "galleryLink": "Galleria ↗"
   },
   "hero": {
-    "eyebrow": "KUVITTEELLINEN PROFIILI · KÄYTETTÄVISSÄ PROJEKTEIHIN",
+    "eyebrow": "KÄYTETTÄVISSÄ PROJEKTEIHIN",
     "titleFirst": "varjoja",
     "titleAccent": "Valoa,",
     "titleMiddle": "ja vähän",
@@ -32,75 +32,64 @@
   },
   "about": {
     "sectionTitle": "Profiili",
-    "lead": "Hyvä suunnittelu tekee monimutkaisesta selkeää — ja tavallisesta vähän kiinnostavampaa.",
+    "lead": "Rakennan näkymiä toisesta todellisuudesta.",
     "paragraphs": [
-      "Olen luova tekijä, jota innostavat merkitykselliset ideat, kiinnostavat ihmiset ja yksityiskohdat, joilla on väliä. Suunnittelen brändejä ja digitaalisia kokemuksia, ja tallennan maailmaa myös kameran linssin läpi.",
-      "Inspiroidun erityisesti kulttuurista, analogisista pinnoista ja suomalaisen luonnon väreistä. Työskentelen mielelläni ideasta viimeiseen pikseliin asti — itsenäisesti tai osana hyvää tiimiä."
+      "Luon 3D-ympäristöjä, joissa futuristinen estetiikka, tunnelmallinen valaistus ja tarkkaan viimeistellyt materiaalit luovat jotain epätavallista. Minua kiinnostaa, kuinka pitkälle digitaalisella kuvalla voi viedä todellisuuden tuntua ja visuaalista mielikuvitusta.",
+      "Inspiroidun futuristisista scifi-maailmoista, ja vaikuttavista digitaalisista maisemista, joissa todellisuus ja mielikuvitus sulautuvat yhteen. Minua kiehtovat tuntemattomat ympäristöt, monumentaalinen mittakaava ja tunnelmat, jotka saavat kuvittelemaan, miltä jokin täysin uusi maailma voisi tuntua."
     ],
-    "moreLink": "Lisää minusta",
     "portraitPlaceholder": "KUVAN PAIKKAMERKKI"
   },
   "experienceSection": {
     "title": "Kokemus",
-    "aside": "VALIKOITU TYÖKOKEMUS",
+    "aside": "",
     "items": [
       {
-        "period": "2025 — NYKYHETKI",
-        "role": "Visuaalinen suunnittelija",
-        "company": "Studio Sumu · Helsinki",
-        "description": "Brändien ja digitaalisten kokemusten suunnittelua kulttuurin ja luovien alojen tekijöille."
+        "period": "2021 — 2026",
+        "role": "Kouluprojektit",
+        "company": "Metropolia Ammattikorkeakoulu · Helsinki",
+        "description": "Useita ryhmäprojekteja kuten lyhytelokuva, peliprojekti sekä puolustusvoimille tehty pelin introvideo."
       },
       {
-        "period": "2023 — 2025",
-        "role": "Graafinen suunnittelija",
-        "company": "Kajo Creative · Helsinki",
-        "description": "Kampanjoita, julkaisugrafiikkaa ja kuvallisia konsepteja monialaisessa suunnittelutiimissä."
-      },
-      {
-        "period": "2021 — 2023",
-        "role": "Valokuvaaja ja suunnittelija",
-        "company": "Freelance · Helsinki",
-        "description": "Kuvallisia konsepteja, valokuvausta ja visuaalista suunnittelua kulttuurialan projekteihin."
+        "period": "2019 — 2021",
+        "role": "Minecraft rakentaminen ja renderöinti",
+        "company": "",
+        "description": "Olen suunnitellut ja rakentanut digitaalisia ympäristöjä Minecraft-pelissä sekä luonut renderöintejä omista ja muiden tekijöiden rakennelmista. Työskentelyssäni yhdistyvät ympäristösuunnittelu, sommittelu, valaistus ja visuaalisen tunnelman rakentaminen. Projektit ovat kehittäneet kykyäni muuttaa digitaalisia rakennelmia viimeistellyiksi visuaalisiksi kokonaisuuksiksi."
       }
-
     ]
   },
   "skillsSection": {
     "title": "Osaaminen",
     "items": [
-      "Visuaalinen suunnittelu",
-      "Valokuvaus",
-      "Käyttöliittymät",
-      "Brändi-identiteetit",
-      "Liikkuva kuva",
-      "Typografia",
-      "Art direction"
+      "3D-mallinnus",
+      "3D-ympäristöt",
+      "Valaistus",
+      "Renderöinti",
+      "Materiaalit ja teksturointi",
+      "Visuaalinen tarinankerronta",
+      "Blender",
+      "Unreal Engine"
     ]
   },
   "educationSection": {
     "title": "Koulutus",
     "period": "2021 — 2026",
     "degree": "Muotoilija, 3D-animointi ja -visualisointi",
-    "school": "Metropolia Ammattikorkeakoulu · Helsinki",
-    "cvLink": "Pyydä CV PDF-muodossa",
-    "cvSubject": "CV"
+    "school": "Metropolia Ammattikorkeakoulu · Helsinki"
   },
   "contact": {
     "eyebrow": "ONKO MIELLESSÄSI JOTAKIN?",
     "title": "Tehdään siitä totta."
   },
   "gallery": {
-    "eyebrow": "KUVITTEELLISIA PROJEKTEJA · 2024 — 2026",
+    "eyebrow": "",
     "titleFirst": "Portfolio",
     "titleAccent": "",
-    "description": "Kuvia, liikkuvaa kuvaa ja visuaalisia kokeiluja. Jokainen projekti alkaa uteliaisuudesta.",
     "sectionTitle": "Galleria",
     "sectionAside": "KAIKKI KUVAT",
     "placeholderLabel": "VISUAALINEN PAIKKAMERKKI",
     "videoLabel": "Videon paikkamerkki",
     "imageType": "KUVA",
     "videoType": "VIDEO",
-    "note": "Profiilin henkilö-, koulutus-, työkokemus- ja projektitiedot ovat kuvitteellisia esimerkkejä. Galleriakuvitukset ovat paikkamerkkejä. Korvaa sisältö omillasi ennen julkaisua.",
     "projects": [
       {
         "title": "Veden muisti",

@@ -690,8 +690,8 @@ a:focus-visible {
   display: block;
   width: auto;
   height: auto;
-  max-width: min(88vw, 1120px);
-  max-height: min(78vh, 780px);
+  max-width: min(94vw, 1600px);
+  max-height: 90vh;
   object-fit: contain;
 }
 
@@ -811,11 +811,11 @@ a:focus-visible {
 }
 
 .lightbox-previous {
-  left: -68px;
+  left: 12px;
 }
 
 .lightbox-next {
-  right: -68px;
+  right: 12px;
 }
 
 .lightbox-close:focus-visible,
@@ -1086,7 +1086,7 @@ a:focus-visible {
   }
 
   .lightbox-art {
-    max-height: 72vh;
+    max-height: 86vh;
   }
 
   .lightbox-close {

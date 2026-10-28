@@ -10,17 +10,27 @@ const galleryCategories = [
 const folderProjectsByCategory = Object.fromEntries(
   galleryCategories.map(({ id }) => [
     id,
-    galleryImages[id].map((filename) => {
-      const title = filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ')
-      return {
-        title,
-        type: 'image',
-        shape: 'square',
-        art: '',
-        media: `${import.meta.env.BASE_URL}pics/${id}/${encodeURIComponent(filename)}`,
-        label: title,
-      }
-    }),
+    [...galleryImages[id]]
+      .map((filename, index, filenames) => {
+        if (id === 'valaistus' && filenames.length > 3 && index === 1) {
+          return filenames[3]
+        }
+        if (id === 'valaistus' && filenames.length > 3 && index === 3) {
+          return filenames[1]
+        }
+        return filename
+      })
+      .map((filename) => {
+        const title = filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ')
+        return {
+          title,
+          type: 'image',
+          shape: 'square',
+          art: '',
+          media: `${import.meta.env.BASE_URL}pics/${id}/${encodeURIComponent(filename)}`,
+          label: title,
+        }
+      }),
   ]),
 )
 const folderProjectCount = galleryCategories.reduce(
@@ -137,9 +147,6 @@ function ResumePage({ onNavigate }) {
             {content.about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <a className="text-link" href={`mailto:${content.identity.email}`}>
-              {content.about.moreLink} <ArrowIcon />
-            </a>
           </div>
         </div>
       </section>
@@ -154,7 +161,7 @@ function ResumePage({ onNavigate }) {
               <span className="experience-period">{item.period}</span>
               <div className="experience-role">
                 <h3>{item.role}</h3>
-                <span>{item.company}</span>
+                {item.company && <span>{item.company}</span>}
               </div>
               <p>{item.description}</p>
               <span className="experience-arrow" aria-hidden="true">
@@ -183,12 +190,6 @@ function ResumePage({ onNavigate }) {
             <h3>{content.educationSection.degree}</h3>
             <span>{content.educationSection.school}</span>
           </div>
-          <a
-            className="text-link cv-link"
-            href={`mailto:${content.identity.email}?subject=${encodeURIComponent(content.educationSection.cvSubject)}`}
-          >
-            {content.educationSection.cvLink} <ArrowIcon />
-          </a>
         </div>
       </section>
 
@@ -274,10 +275,9 @@ function GalleryPage() {
     <main className="gallery-page section-shell">
       <div className="gallery-intro">
         <h1>
-          {content.gallery.titleFirst}{' '}
-          <span>{content.gallery.titleAccent}</span>
+          {content.gallery.titleFirst}
+          {content.gallery.titleAccent && <span>{content.gallery.titleAccent}</span>}
         </h1>
-        <p>{content.gallery.description}</p>
       </div>
       {indexedGalleryGroups.map((group) => (
         <section className="gallery-category" key={group.title}>
@@ -343,10 +343,6 @@ function GalleryPage() {
           </button>
         </dialog>
       )}
-      <div className="gallery-note">
-        <span className="note-star">✳</span>
-        <p>{content.gallery.note}</p>
-      </div>
     </main>
   )
 }
