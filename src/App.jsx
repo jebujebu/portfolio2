@@ -74,9 +74,10 @@ function ResumePage({ onNavigate }) {
             {content.hero.eyebrow}
           </div>
           <h1>
+            <span className="hero-title-accent">{content.hero.titleAccent}</span>{' '}
             {content.hero.titleFirst}
             <br />
-            <span>{content.hero.titleAccent}</span> {content.hero.titleMiddle}
+            {content.hero.titleMiddle}
             <br />
             {content.hero.titleLast}
           </h1>
