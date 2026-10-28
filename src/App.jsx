@@ -3,7 +3,7 @@ import content from './content.json'
 import { galleryImages } from 'virtual:gallery-images'
 
 const galleryCategories = [
-  { id: 'valaistus', title: 'Valaistus', number: '06' },
+  { id: 'valaistus', title: 'Valaistus/Renderöinti', number: '06' },
   { id: 'mallinnus', title: 'Mallinnus', number: '07' },
 ]
 
@@ -273,10 +273,6 @@ function GalleryPage() {
   return (
     <main className="gallery-page section-shell">
       <div className="gallery-intro">
-        <div className="eyebrow">
-          <span className="status-dot" />
-          {content.gallery.eyebrow}
-        </div>
         <h1>
           {content.gallery.titleFirst}{' '}
           <span>{content.gallery.titleAccent}</span>

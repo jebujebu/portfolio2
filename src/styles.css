@@ -579,6 +579,13 @@ a:focus-visible {
   margin-top: 14px;
   margin-bottom: 9px;
   font-size: clamp(40px, 5vw, 58px);
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.gallery-intro h1 > span {
+  font-family: inherit;
 }
 
 .gallery-intro > p {
@@ -593,6 +600,12 @@ a:focus-visible {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
+}
+
+.gallery-category > .section-heading h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
 }
 
 .gallery-empty {
@@ -666,13 +679,19 @@ a:focus-visible {
 }
 
 .lightbox-art {
-  width: min(88vw, 1120px);
-  height: min(78vh, 780px);
+  width: auto;
+  height: auto;
   aspect-ratio: auto;
-  background-color: #171a1b;
+  background-color: transparent;
 }
 
 .lightbox-art .project-media {
+  position: static;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(88vw, 1120px);
+  max-height: min(78vh, 780px);
   object-fit: contain;
 }
 
@@ -1067,8 +1086,7 @@ a:focus-visible {
   }
 
   .lightbox-art {
-    width: 88vw;
-    height: 72vh;
+    max-height: 72vh;
   }
 
   .lightbox-close {
